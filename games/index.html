@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title></title>
-	
+
+	<title>Brendan Hansen | Games</title>
+
 	<!-- Get bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -13,11 +14,26 @@
 
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
-			<h1 class="display-4">Welcome to Brendan Hansen</h1>
-			<p class="lead">This is just a test website (for now).</p>
+			<h1 class="display-4">Games</h1>
+			<p class="lead">A small list of the games I have made.</p>
 		</div>
 	</div>
-	
+
+	<div class="container">
+		<div class="card" style="width:18rem">
+			<div class="card-body">
+				<h5 class="card-title">
+					Breakout
+					<span class="badge badge-primary">Unity / C#</span>
+				</h5>
+				<!-- <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6> -->
+				<p class="card-text">A simple remake of the class game Breakout made in Unity 5.</p>
+				<a class="card-link" href="/games/breakout">Play Game</a>
+				<a class="card-link" href="#">Source</a>
+			</div>
+		</div>
+	</div>
+
 	<!-- Require js files -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -26,7 +42,7 @@
 	<script>
 		$(function() {
 			$("#nav-placeholder").load("/nav.html", () => {
-				$("#navHome").addClass("active");
+				$("#navGames").addClass("active");
 			});
 		});
 	</script>

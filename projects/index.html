@@ -8,20 +8,6 @@
 	<!-- Get bootstrap CDN -->
 	<link rel="stylesheet" type="text/css" href="/css/index.css" />
 
-	<style>
-		.card {
-			width: 18rem;
-			min-width: 18rem;
-			margin: 1rem;
-		}
-
-		.card-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-
-	</style>
 </head>
 <body>
 	<div id="nav-placeholder"></div>
@@ -33,28 +19,11 @@
 		</div>
 	</div>
 
-	<script id="cardTemplate" type="text/x-handlebars-template">
-		{{#each projects}}
-		<div class="card">
-			<div class="card-body">
-				<h5 class="card-title">
-					{{title}}
-				</h5>
-				<h6 class="card-subtitle mb-2 text-muted">
-					<span class="badge badge-primary">{{subtitle}}</span>
-				</h6>
-				<p class="card-text">
-					{{description}}
-				</p>
-				<a class="card-link" href="{{source}}">Source</a>
-			</div>
-		</div>
-		{{/each}}
-	</script>
+	<div id="cardTemplate-placeholder" style="display: none"></div>
 
-	<div class="container card-container">
+	<main class="container card-container">
 		<div id="card-placeholder"></div>
-	</div>
+	</main>
 
 	<div id="footer-placeholder"></div>
 	
@@ -63,6 +32,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="/lib/handlebars-v4.0.11.js"></script>
+	<script src="/js/cardHelper.js"></script>
 
 	<script>
 		$(function() {
@@ -72,46 +42,40 @@
 
 			$("#footer-placeholder").load("/footer.html");
 
-			let cardSource = $("#cardTemplate").text();
-			let cardTemplate = Handlebars.compile(cardSource);
-
-			let cardData = {
+			loadCardData("cardTemplate-placeholder", "card-placeholder", {
 				projects: [
+					{ title: "This website",
+					  subtitle: "jQuery / Bootstrap",
+					  description: "I had heard about Bootstrap, but I never fully understood how useful it can be until I made this website.",
+					  source: "https://github.com/brendanfh/brendanfh.github.io"
+					},
 					{ title: "DSU Schedule Builder", 
 					  subtitle: "C# / Go / Python",
 					  description: "Myself and a small team made a simpler and cleaner alternative to our school's current schedule planning tool.",
 					  source: "https://github.com/Graylunchbox74/DSUScheduleBuilder"
 					},
-					{ title: "LOVE Web", 
-					  subtitle: "Javascript / Lua",
-					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
-					  source: "https://github.com/brendanfh/love-web"
+					{ title: "Elm Weather App", 
+					  subtitle: "Elm / Webpack",
+					  description: "A simple weather app made in Elm and compiled using Webpack and Foreman. A lot could still be done on the project but I never did intend to finish it.",
+					  source: "https://github.com/brendanfh/ElmWeatherApp"
 					},
 					{ title: "LOVE Web", 
 					  subtitle: "Javascript / Lua",
 					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
 					  source: "https://github.com/brendanfh/love-web"
 					},
-					{ title: "LOVE Web", 
-					  subtitle: "Javascript / Lua",
-					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
-					  source: "https://github.com/brendanfh/love-web"
+					{ title: "Purescript Minesweeper", 
+					  subtitle: "Purescript",
+					  description: "Functional programming is very different imperative programming. In my journey to learn functional programming, I made a simple remake of the classic game found on most Windows computers, Minesweeper.",
+					  source: "https://github.com/brendanfh/purescript-minesweeper"
 					},
-					{ title: "LOVE Web", 
-					  subtitle: "Javascript / Lua",
-					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
-					  source: "https://github.com/brendanfh/love-web"
-					},
-					{ title: "LOVE Web", 
-					  subtitle: "Javascript / Lua",
-					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
-					  source: "https://github.com/brendanfh/love-web"
+					{ title: "Discrete Help Tool", 
+					  subtitle: "C++",
+					  description: "A friend and I found some aspects of our discrete math class to be rather tedious. We made a simple C++ console application to make homework less of a chore.",
+					  source: "https://github.com/Graylunchbox74/DiscreteHelpTool"
 					},
 				]	
-			};
-
-			let cardsHtml = cardTemplate(cardData);
-			$("#card-placeholder").replaceWith(cardsHtml);
+			});
 		});
 	</script>
 </body>

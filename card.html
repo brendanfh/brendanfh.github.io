@@ -1,0 +1,21 @@
+<script id="cardTemplate" type="text/x-handlebars-template">
+	{{#each projects}}
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">
+				{{title}}
+			</h5>
+			<h6 class="card-subtitle mb-2 text-muted">
+				<span class="badge badge-primary">{{subtitle}}</span>
+			</h6>
+			<p class="card-text">
+				{{description}}
+			</p>
+			{{#if play}}
+			<a class="card-link" href="{{play}}">Play Game</a>
+			{{/if}}
+			<a class="card-link" href="{{source}}">Source</a>
+		</div>
+	</div>
+	{{/each}}
+</script>

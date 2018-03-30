@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +11,6 @@
 </head>
 <body>
 	<div id="nav-placeholder"></div>
-
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<h1 class="display-4">Welcome to Brendan Hansen</h1>
-			<p class="lead">This is just a test website (for now).</p>
-		</div>
-	</div>
 
 	<main class="container">
 	</main>
@@ -31,7 +25,7 @@
 	<script>
 		$(function() {
 			$("#nav-placeholder").load("/nav.html", () => {
-				$("#navHome").addClass("active");
+				$("#navAbout").addClass("active");
 			});
 
 			$("#footer-placeholder").load("/footer.html");

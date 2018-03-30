@@ -7,7 +7,7 @@
 	<title>Brendan Hansen | Games</title>
 
 	<!-- Get bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/index.css" type="text/css">
 </head>
 <body>
 	<div id="nav-placeholder"></div>
@@ -19,20 +19,23 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<main class="container">
 		<div class="card" style="width:18rem">
 			<div class="card-body">
 				<h5 class="card-title">
 					Breakout
-					<span class="badge badge-primary">Unity / C#</span>
 				</h5>
-				<!-- <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6> -->
+				<h6 class="card-subtitle mb-2 text-muted">
+					<span class="badge badge-primary">Unity / C#</span>
+				</h6>
 				<p class="card-text">A simple remake of the class game Breakout made in Unity 5.</p>
 				<a class="card-link" href="/games/breakout">Play Game</a>
 				<a class="card-link" href="#">Source</a>
 			</div>
 		</div>
-	</div>
+	</main>
+
+	<div id="footer-placeholder"></div>
 
 	<!-- Require js files -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
@@ -44,6 +47,8 @@
 			$("#nav-placeholder").load("/nav.html", () => {
 				$("#navGames").addClass("active");
 			});
+
+			$("#footer-placeholder").load("/footer.html");
 		});
 	</script>
 </body>

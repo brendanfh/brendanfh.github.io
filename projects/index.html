@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+	
+	<!-- Get bootstrap CDN -->
+	<link rel="stylesheet" type="text/css" href="/css/index.css" />
+
+	<style>
+		.card {
+			width: 18rem;
+			min-width: 18rem;
+			margin: 1rem;
+		}
+
+		.card-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="nav-placeholder"></div>
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4">Projects</h1>
+			<p class="lead">These are some of the projects I have worked on and some of the tools with which I've worked.</p>
+		</div>
+	</div>
+
+	<script id="cardTemplate" type="text/x-handlebars-template">
+		{{#each projects}}
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">
+					{{title}}
+				</h5>
+				<h6 class="card-subtitle mb-2 text-muted">
+					<span class="badge badge-primary">{{subtitle}}</span>
+				</h6>
+				<p class="card-text">
+					{{description}}
+				</p>
+				<a class="card-link" href="{{source}}">Source</a>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+
+	<div class="container card-container">
+		<div id="card-placeholder"></div>
+	</div>
+
+	<div id="footer-placeholder"></div>
+	
+	<!-- Require js files -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="/lib/handlebars-v4.0.11.js"></script>
+
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("/nav.html", () => {
+				$("#navProjects").addClass("active");
+			});
+
+			$("#footer-placeholder").load("/footer.html");
+
+			let cardSource = $("#cardTemplate").text();
+			let cardTemplate = Handlebars.compile(cardSource);
+
+			let cardData = {
+				projects: [
+					{ title: "DSU Schedule Builder", 
+					  subtitle: "C# / Go / Python",
+					  description: "Myself and a small team made a simpler and cleaner alternative to our school's current schedule planning tool.",
+					  source: "https://github.com/Graylunchbox74/DSUScheduleBuilder"
+					},
+					{ title: "LOVE Web", 
+					  subtitle: "Javascript / Lua",
+					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
+					  source: "https://github.com/brendanfh/love-web"
+					},
+					{ title: "LOVE Web", 
+					  subtitle: "Javascript / Lua",
+					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
+					  source: "https://github.com/brendanfh/love-web"
+					},
+					{ title: "LOVE Web", 
+					  subtitle: "Javascript / Lua",
+					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
+					  source: "https://github.com/brendanfh/love-web"
+					},
+					{ title: "LOVE Web", 
+					  subtitle: "Javascript / Lua",
+					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
+					  source: "https://github.com/brendanfh/love-web"
+					},
+					{ title: "LOVE Web", 
+					  subtitle: "Javascript / Lua",
+					  description: "At the time, there was not an easy way to port a Love2D game to the web, so I made a simple engine that uses MoonshineVM and custom Javascript to polyfill as much of the Love2D API as possible.",
+					  source: "https://github.com/brendanfh/love-web"
+					},
+				]	
+			};
+
+			let cardsHtml = cardTemplate(cardData);
+			$("#card-placeholder").replaceWith(cardsHtml);
+		});
+	</script>
+</body>
+</html>

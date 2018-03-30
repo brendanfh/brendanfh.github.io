@@ -1,0 +1,20 @@
+
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+:root {
+	--footer-height: 4rem;
+}
+
+html, body {
+	height: 100%;
+}
+
+.footer {
+	padding: 2rem;
+	background-color: #e9ecef;
+	height: var(--footer-height);
+}
+
+main.container {
+	min-height: 100%;
+	margin-bottom: -var(--footer-height);
+}

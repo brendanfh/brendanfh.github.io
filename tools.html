@@ -1,24 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Brendan Hansen</title>
+	<title>Brendan Hansen | Tools</title>
 	
 	<!-- Get bootstrap CDN -->
-	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" type="text/css" href="/css/index.css" />
+
 </head>
 <body>
 	<div id="nav-placeholder"></div>
 
 	<div class="jumbotron jumbotron-fluid text-center">
 		<div class="container">
-			<h1 class="display-4">Welcome to Brendan Hansen</h1>
-			<p class="lead">This is just a test website (for now).</p>
+			<h1 class="display-4">Tools and Technologies</h1>
+			<p class="lead">These are some of the tools that I have used in the past for various projects.</p>
 		</div>
 	</div>
 
-	<main class="container">
+	<div id="cardTemplate-placeholder" style="display: none"></div>
+
+	<main class="container card-container">
+		<div id="card-placeholder"></div>
 	</main>
 
 	<div id="footer-placeholder"></div>
@@ -27,11 +32,13 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="/lib/handlebars-v4.0.11.js"></script>
+	<script src="/js/cardHelper.js"></script>
 
 	<script>
 		$(function() {
 			$("#nav-placeholder").load("/nav.html", () => {
-				$("#navHome").addClass("active");
+				$("#navTools").addClass("active");
 			});
 
 			$("#footer-placeholder").load("/footer.html");
